@@ -212,17 +212,16 @@
     <!-- Contact -->
     <div class="section" id="contact">
         <h2>Contact Us</h2>
-        <form>
-            <label>Company Name:</label><br>
-            <input type="text" required><br><br>
-            <label>Responsible Contact Person:</label><br>
-            <input type="text" required><br><br>
-            <label>Email:</label><br>
-            <input type="email" required><br><br>
-            <label>Message:</label><br>
-            <textarea rows="4" required></textarea><br><br>
-            <button type="submit" class="contact-button">Submit</button>
-        </form>
+        <p>For inquiries, corporate partnerships, and subscriptions, contact us below:</p>
+            <form id="contactForm" action="https://formsubmit.co/dharma369.amsterdam@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://dharma369-amsterdam.github.io/Dharma369/thank-you.html">
+                <input type="text" name="Company Name" placeholder="Company Name" required>
+                <input type="text" name="Contact Person" placeholder="Responsible Contact Person" required>
+                <input type="email" name="Email" placeholder="Email" required>
+                <textarea name="Message" rows="4" placeholder="Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
     </div>
 
 </body>
