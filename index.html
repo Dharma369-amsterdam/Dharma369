@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharma 369 - Corporate Wellness</title>
+    <style>
+        /* General Page Styling */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background-color: #0A192F;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('hero.jpg') no-repeat center center/cover;
+        }
+
+        /* Semi-transparent overlay for better text contrast */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-text {
+            font-size: 2.8rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
+        }
+
+        /* CTA Button Styling */
+        .contact-button {
+            background: linear-gradient(to right, #E0C097, #C89A76);
+            color: #0A192F;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease-in-out, background 0.3s;
+        }
+
+        .contact-button:hover {
+            background: linear-gradient(to right, #C89A76, #A67C52);
+            transform: scale(1.1);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 70px 30px;
+            background-color: #112240;
+            border-radius: 12px;
+            margin: 30px auto;
+            max-width: 90%;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: #E0C097;
+            margin-bottom: 20px;
+        }
+
+        .section p, .section ul {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Subscription Packages */
+        .package-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .package {
+            background: #1B2A49;
+            padding: 30px;
+            border-radius: 12px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            border: 2px solid #E0C097;
+        }
+
+        .package:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .package h3 {
+            font-size: 1.6rem;
+            color: #E0C097;
+        }
+
+        /* Contact Form Styling */
+        form {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        button.contact-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 1.8rem;
+            }
+
+            .package {
+                width: 90%;
+            }
+
+            .contact-button {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+
+            .section {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-text">DHARMA 369<br>Corporate Wellness Reimagined</div>
+            <p>Bringing guided meditation and therapeutic massage to corporate professionals.</p>
+            <a href="#contact" class="contact-button">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="section">
+        <h2>About Dharma 369</h2>
+        <p>Dharma 369 is a futuristic corporate wellness center in Amsterdam that integrates **Shape Reality Meditation** and therapeutic massage to enhance mental clarity, reduce stress, and improve productivity.</p>
+        <p>Scientific studies show that guided meditation can reduce stress by **40%** and improve cognitive function by **20%**. Our program is designed to help companies reduce burnout, absenteeism, and workplace fatigue.</p>
+        <p>In the Netherlands, stress-related absenteeism costs businesses **billions annually**, with burnout accounting for **over 20% of long-term sick leave cases**. Companies investing in structured wellness programs experience a **30% reduction in employee sick days** and a **25% boost in productivity**.</p>
+    </div>
+
+    <!-- Subscription Plans Section -->
+    <div class="section">
+        <h2>Our Corporate Subscription Plans</h2>
+        <div class="package-container">
+            <div class="package">
+                <h3>Basic Plan</h3>
+                <p>✔ 2 meditation & massage sessions per month</p>
+                <p>✔ Email support</p>
+                <p><strong>€299/month</strong></p>
+            </div>
+
+            <div class="package">
+                <h3>Standard Plan</h3>
+                <p>✔ 4 meditation & massage sessions per month</p>
+                <p>✔ Priority booking & wellness reports</p>
+                <p><strong>€499/month</strong></p>
+            </div>
+
+            <div class="package">
+                <h3>Premium Plan</h3>
+                <p>✔ Unlimited meditation sessions</p>
+                <p>✔ 8 massage sessions per employee</p>
+                <p>✔ Dedicated wellness consultant</p>
+                <p><strong>€799/month</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="section" id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label>Company Name:</label><br>
+            <input type="text" required><br><br>
+
+            <label>Responsible Contact Person:</label><br>
+            <input type="text" required><br><br>
+
+            <label>Email:</label><br>
+            <input type="email" required><br><br>
+
+            <label>Message:</label><br>
+            <textarea rows="4" required></textarea><br><br>
+
+            <button type="submit" class="contact-button">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
