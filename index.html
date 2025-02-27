@@ -5,212 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dharma 369 - Corporate Wellness</title>
     <style>
-        /* General Styling */
         body {
-            margin: 0;
             font-family: 'Poppins', sans-serif;
-            color: white;
+            margin: 0;
+            padding: 0;
             background-color: #0A192F;
-            text-align: center;
-            scroll-behavior: smooth;
-        }
-
-        /* Animated Background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('hero.jpg') no-repeat center center/cover;
-            opacity: 0.08;
-            z-index: -1;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: url('hero.jpg') no-repeat center center/cover;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-            z-index: 1;
-            backdrop-filter: blur(5px);
-        }
-
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 2;
-        }
-
-        .hero-text {
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 3px 3px 8px rgba(224, 192, 151, 0.8);
-        }
-
-        /* CTA Button */
-        .contact-button {
-            background: linear-gradient(to right, #E0C097, #C89A76);
-            color: #0A192F;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .contact-button:hover {
-            background: linear-gradient(to right, #C89A76, #A67C52);
-            transform: scale(1.1);
-            box-shadow: 0px 0px 12px rgba(224, 192, 151, 0.8);
-        }
-
-        /* Sections */
-        .section {
-            padding: 100px 30px;
-            background-color: #112240;
-            border-radius: 12px;
-            margin: 50px auto;
-            max-width: 90%;
-        }
-
-        .section h2 {
-            font-size: 2.2rem;
-            color: #E0C097;
-            margin-bottom: 20px;
-        }
-
-        .section p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-
-        /* Subscription Packages */
-        .package-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .package {
-            background: #1B2A49;
-            padding: 40px;
-            border-radius: 15px;
-            width: 350px;
-            text-align: center;
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-            border: 3px solid #E0C097;
-        }
-
-        .package:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0px 10px 30px rgba(224, 192, 151, 0.6);
-        }
-
-        .package p strong {
-            display: block;
-            font-size: 1.6rem;
-            color: #E0C097;
-            margin-top: 15px;
-        }
-
-        /* Contact Form */
-        form {
-            max-width: 600px;
-            margin: auto;
-            text-align: left;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 16px;
-            border-radius: 12px;
-            border: 2px solid rgba(224, 192, 151, 0.8);
-            background: rgba(255, 255, 255, 0.1);
             color: white;
+        }
+        header {
+            text-align: center;
+            padding: 50px;
+            background: url('hero.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #E0C097;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+        }
+        p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #E0C097;
+            color: #0A192F;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
             transition: all 0.3s;
         }
-
-        input:focus, textarea:focus {
-            border-color: #E0C097;
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0px 0px 12px rgba(224, 192, 151, 0.8);
+        .btn:hover {
+            background: #C89A76;
         }
-
-        /* Footer */
-        .footer {
-            padding: 30px;
-            background-color: #0A192F;
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 50px;
+        section {
+            padding: 60px;
+            text-align: center;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-text {
-                font-size: 2.5rem;
-            }
-
-            .package {
-                width: 90%;
-            }
-
-            .contact-button {
-                font-size: 16px;
-                padding: 12px 24px;
-            }
-
-            .section {
-                padding: 50px 20px;
-            }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #112240;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .grid div {
+            background: #163554;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            background: #E0C097;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0A192F;
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero -->
-    <div class="hero">
-        <div class="hero-content">
-            <div class="hero-text">DHARMA 369<br>Corporate Wellness Reimagined</div>
-            <p>Bringing guided meditation and therapeutic massage to corporate professionals.</p>
-            <a href="#contact" class="contact-button">Contact Us</a>
+    <header>
+        <h1>DHARMA 369</h1>
+        <p>Corporate Wellness Reimagined: Guided Meditation & Massage for Peak Performance</p>
+        <a href="#contact" class="btn">Contact Us</a>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>Our Offerings</h2>
+            <p>Enhance Employee Well-being with Guided Meditation & Massage. Reduce stress, improve focus, and boost productivity.</p>
+            <div class="grid">
+                <div>
+                    <h3>Therapeutic Massage</h3>
+                    <p>Unwind with expert therapists trained in relaxation techniques tailored for professionals.</p>
+                </div>
+                <div>
+                    <h3>Reality Shaping Meditation</h3>
+                    <p>Boost creativity, mental clarity, and workplace efficiency through scientifically backed meditation techniques.</p>
+                </div>
+                <div>
+                    <h3>Sensory Isolation Tanks</h3>
+                    <p>Deep relaxation with innovative floating therapy, improving focus and stress management.</p>
+                </div>
+                <div>
+                    <h3>Nature-Inspired Ambiance</h3>
+                    <p>A futuristic yet calming environment combining biophilic design and advanced wellness technology.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- About Dharma 369 -->
-    <div class="section">
-        <h2>About Dharma 369</h2>
-        <p>We redefine corporate wellness with a fusion of guided meditation and therapeutic massage.</p>
-        <p>📊 Burnout costs Dutch companies billions yearly, with **over 20% of long-term sick leave cases** caused by stress. Our structured wellness programs reduce absenteeism by **30%** and increase productivity by **25%**.</p>
-    </div>
-
-    <!-- Corporate Subscription Plans -->
-    <div class="section">
-        <h2>Corporate Subscription Plans</h2>
+    <section>
+        <div class="container">
+           <h2>Corporate Subscription Plans</h2>
         <div class="package-container">
             <div class="package">
                 <h3>Basic Plan</h3>
@@ -228,28 +148,45 @@
                 <p><strong>€799/month per employee</strong></p>
             </div>
         </div>
-    </div>
+    </div> 
+    </section>
 
-    <!-- Contact -->
-    <div class="section" id="contact">
-        <h2>Contact Us</h2>
-        <form action="https://formsubmit.co/dharma369.amsterdam@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://dharma369-amsterdam.github.io/Dharma369/thank-you.html">
-    
-    <input type="text" name="Company Name" placeholder="Company Name" required><br><br>
-    <input type="text" name="Contact Person" placeholder="Responsible Contact Person" required><br><br>
-    <input type="email" name="Email" placeholder="Email" required><br><br>
-    <textarea name="Message" rows="4" placeholder="Message" required></textarea><br><br>
-    
-    <button type="submit" class="contact-button">Submit</button>
-</form>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>For inquiries, corporate partnerships, and subscriptions, contact us below:</p>
+            <form id="contactForm" action="https://formsubmit.co/YOUR-EMAIL@EXAMPLE.COM" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://dharma369-amsterdam.github.io/Dharma369/thank-you.html">
+                <input type="text" name="Company Name" placeholder="Company Name" required>
+                <input type="text" name="Contact Person" placeholder="Responsible Contact Person" required>
+                <input type="email" name="Email" placeholder="Email" required>
+                <textarea name="Message" rows="4" placeholder="Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="successMessage" style="display: none; color: #E0C097; font-size: 18px; margin-top: 20px;">
+                ✅ Thank you! Your message has been sent successfully.
+            </p>
+            <script>
+                document.getElementById("contactForm").addEventListener("submit", function(event) {
+                    event.preventDefault(); 
+                    fetch("https://formsubmit.co/YOUR-EMAIL@EXAMPLE.COM", {
+                        method: "POST",
+                        body: new FormData(this)
+                    }).then(response => {
+                        if (response.ok) {
+                            document.getElementById("successMessage").style.display = "block";
+                            document.getElementById("contactForm").reset();
+                        }
+                    }).catch(error => console.error("Error:", error));
+                });
+            </script>
+        </div>
+    </section>
 
-
-
-    </div>
-
-    <div class="footer">© 2025 Dharma 369 | All Rights Reserved</div>
+    <footer>
+        <p>© 2025 Dharma 369 - Corporate Wellness in Amsterdam</p>
+    </footer>
 
 </body>
 </html>
