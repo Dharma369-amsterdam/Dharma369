@@ -167,6 +167,44 @@
         }
     </style>
 </head>
+    <script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents page reload
+
+    let form = event.target;
+    let submitButton = document.getElementById("submitButton");
+    let statusMessage = document.getElementById("statusMessage");
+
+    submitButton.innerText = "Submitting...";
+    submitButton.disabled = true;
+
+    let formData = new FormData(form);
+
+    fetch("https://formsubmit.co/dharma369.amsterdam@gmail.com", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            statusMessage.innerText = "✅ Message sent successfully!";
+            form.reset(); // Clears form
+            setTimeout(() => {
+                window.location.href = "https://dharma369-amsterdam.github.io/Dharma369/thank-you.html";
+            }, 2000); // Redirect after 2 seconds
+        } else {
+            statusMessage.innerText = "❌ Error submitting form. Try again!";
+        }
+    })
+    .catch(error => {
+        statusMessage.innerText = "❌ Network error. Please try again!";
+    })
+    .finally(() => {
+        submitButton.innerText = "Submit";
+        submitButton.disabled = false;
+    });
+});
+</script>
+
 <body>
 
     <!-- Hero -->
@@ -220,7 +258,8 @@
                 <input type="text" name="Contact Person" placeholder="Responsible Contact Person" required>
                 <input type="email" name="Email" placeholder="Email" required>
                 <textarea name="Message" rows="4" placeholder="Message" required></textarea>
-                <button type="submit">Submit</button>
+                <button type="submit" id="submitButton">Submit</button>
+                <p id="statusMessage"></p> <!-- Shows submission status -->
             </form>
     </div>
 
