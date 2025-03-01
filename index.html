@@ -181,51 +181,55 @@
 <meta name="twitter:image" content="https://dharma369-amsterdam.github.io/Dharma369/hero.jpg">
 
 </head>
-    <script>
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevents page reload
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevents page reload
 
-    let form = event.target;
-    let submitButton = document.getElementById("submitButton");
-    let statusMessage = document.getElementById("statusMessage");
+        let form = event.target;
+        let submitButton = document.getElementById("submitButton");
+        let statusMessage = document.getElementById("statusMessage");
 
-    submitButton.innerText = "Submitting...";
-    submitButton.disabled = true;
+        submitButton.innerText = "Submitting...";
+        submitButton.disabled = true;
 
-    let formData = new FormData(form);
+        let formData = new FormData(form);
 
-    fetch("https://formsubmit.co/dharma369.amsterdam@gmail.com", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => {
-        if (response.ok) {
-            statusMessage.innerText = "✅ Message sent successfully!";
-            form.reset(); // Clears form
-            setTimeout(() => {
-                window.location.href = "https://dharma369-amsterdam.github.io/Dharma369/thank-you.html";
-            }, 2000); // Redirect after 2 seconds
-        } else {
-            statusMessage.innerText = "❌ Error submitting form. Try again!";
-        }
-    })
-    .catch(error => {
-        statusMessage.innerText = "❌ Network error. Please try again!";
-    })
-    .finally(() => {
-        submitButton.innerText = "Submit";
-        submitButton.disabled = false;
+        fetch("https://formsubmit.co/dharma369.amsterdam@gmail.com", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                statusMessage.innerText = "✅ Message sent successfully!";
+                form.reset(); // Clears form
+                setTimeout(() => {
+                    window.location.href = "https://dharma369-amsterdam.github.io/Dharma369/thank-you.html";
+                }, 2000); // Redirect after 2 seconds
+            } else {
+                statusMessage.innerText = "❌ Error submitting form. Try again!";
+            }
+        })
+        .catch(error => {
+            statusMessage.innerText = "❌ Network error. Please try again!";
+        })
+        .finally(() => {
+            submitButton.innerText = "Submit";
+            submitButton.disabled = false;
+        });
     });
 });
 </script>
+
 
 <body>
 
     <!-- Hero -->
     <div class="hero">
     <video autoplay loop muted playsinline class="hero-video">
-        <source src="https://raw.githubusercontent.com/Dharma369-amsterdam/Dharma369/refs/heads/main/Dharma-hero.webm" type="video/webm">
-        Your browser does not support the video tag.
+        <source src="https://https://raw.githubusercontent.com/Dharma369-amsterdam/Dharma369/main/Dharma-hero.webm" type="video/webm">
+        <source src="https://raw.githubusercontent.com/Dharma369-amsterdam/Dharma369/main/Dharma-hero.mp4" type="video/mp4">
+     Your browser does not support the video tag.
     </video>
     <div class="hero-content">
         <h1>DHARMA 369</h1>
